@@ -1,0 +1,19 @@
+# Render blueprint — deploy CACHE//STRATA for free.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# This runs the app as a free Node web service (Next 16 `next start`, which
+# honours Render's injected $PORT). The page is 100% client-rendered, so you can
+# alternatively flip `output: "export"` in next.config.ts and host the generated
+# ./out folder on any static host (Render Static Site, GitHub Pages, Netlify,
+# Cloudflare Pages) — see the README for that path.
+services:
+  - type: web
+    name: cache-strata
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
