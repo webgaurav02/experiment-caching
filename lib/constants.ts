@@ -61,9 +61,9 @@ export const COLOR = {
   bg: "#000000",
   panel: "#050505",
   ink: "#f2f2f2",
-  inkDim: "#8a8a8a",
-  inkFaint: "#4a4a4a",
-  inkGhost: "#242424",
+  inkDim: "#a2a2a2",
+  inkFaint: "#787878",
+  inkGhost: "#404040",
   line: "#1c1c1c",
   line2: "#2c2c2c",
   hit: "#e8e8e8", // a cache hit — stark white, "good"

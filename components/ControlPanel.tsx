@@ -33,10 +33,11 @@ export function ControlPanel({
   return (
     <div className="flex h-full min-h-0 flex-col gap-2 overflow-y-auto pr-0.5">
       <Panel
-        label="SCENARIO PRESETS"
+        label="SCENARIOS"
         fig="FIG.01"
+        className="shrink-0"
         right={
-          <button onClick={onInfo} className="eyebrow text-ink-faint transition-colors hover:text-ink">
+          <button onClick={onInfo} className="eyebrow text-ink-dim transition-colors hover:text-ink">
             [ METHODOLOGY ]
           </button>
         }
@@ -68,7 +69,7 @@ export function ControlPanel({
         })}
       </Panel>
 
-      <Panel label="WRITE POLICY" fig="FIG.02" bodyClass="flex flex-col gap-2 p-3">
+      <Panel label="WRITE POLICY" fig="FIG.02" className="shrink-0" bodyClass="flex flex-col gap-2 p-3">
         <Segmented<Config["writePolicy"]>
           value={config.writePolicy}
           onChange={(v) => onChange("writePolicy", v)}
@@ -82,7 +83,7 @@ export function ControlPanel({
         <p className="text-[9px] leading-relaxed text-ink-dim">{POLICY_DESC[config.writePolicy]}</p>
       </Panel>
 
-      <Panel label="CACHE CONFIGURATION" fig="FIG.2A" bodyClass="flex flex-col gap-3 p-3">
+      <Panel label="CACHE CONFIGURATION" fig="FIG.2A" className="shrink-0" bodyClass="flex flex-col gap-3 p-3">
         <Field label="CACHE TIER" hint={config.cacheEnabled ? "ONLINE" : "OFFLINE"}>
           <Toggle on={config.cacheEnabled} onChange={(v) => onChange("cacheEnabled", v)} labels={["OFFLINE", "ONLINE"]} />
         </Field>
@@ -122,7 +123,7 @@ export function ControlPanel({
         </div>
       </Panel>
 
-      <Panel label="WORKLOAD" fig="FIG.2B" bodyClass="flex flex-col gap-3 p-3">
+      <Panel label="WORKLOAD" fig="FIG.2B" className="shrink-0" bodyClass="flex flex-col gap-3 p-3">
         <Field label="ARRIVAL RATE" hint="requests / sec">
           <Slider
             value={config.arrivalRate}
@@ -147,7 +148,7 @@ export function ControlPanel({
         </Field>
       </Panel>
 
-      <Panel label="INVENTORY CONCURRENCY" fig="FIG.2C" bodyClass="flex flex-col gap-2 p-3">
+      <Panel label="INVENTORY CONCURRENCY" fig="FIG.2C" className="shrink-0" bodyClass="flex flex-col gap-2 p-3">
         <Segmented<Config["concurrency"]>
           value={config.concurrency}
           onChange={(v) => onChange("concurrency", v)}

@@ -40,12 +40,12 @@ export function Panel({
 }) {
   return (
     <section className={`ticked relative flex min-h-0 flex-col border border-line bg-panel ${className}`}>
-      <header className="flex h-7 shrink-0 items-center justify-between border-b border-line px-3">
-        <span className="eyebrow flex items-center gap-2">
-          {fig && <span className="text-ink-ghost">{fig}</span>}
-          <span className="text-ink-dim">{label}</span>
+      <header className="flex h-7 shrink-0 items-center justify-between gap-2 overflow-hidden border-b border-line px-3">
+        <span className="eyebrow flex min-w-0 items-center gap-2 whitespace-nowrap">
+          {fig && <span className="shrink-0 text-ink-ghost">{fig}</span>}
+          <span className="truncate text-ink-dim">{label}</span>
         </span>
-        {right}
+        {right && <span className="shrink-0">{right}</span>}
       </header>
       <div className={`min-h-0 flex-1 ${bodyClass}`}>{children}</div>
     </section>

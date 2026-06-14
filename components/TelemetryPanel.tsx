@@ -61,7 +61,7 @@ export function TelemetryPanel({ m, history }: { m: Metrics; history: HistoryFra
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-2 overflow-y-auto">
-      <Panel label="DB QUEUEING MODEL" fig="FIG.03" bodyClass="p-2">
+      <Panel label="DB QUEUEING MODEL" fig="FIG.03" className="shrink-0" bodyClass="p-2">
         <div className="h-[150px]">
           <QueueingCurve rho={m.dbUtil} dbLatency={m.dbLatencyMs} />
         </div>
@@ -70,7 +70,7 @@ export function TelemetryPanel({ m, history }: { m: Metrics; history: HistoryFra
         </p>
       </Panel>
 
-      <Panel label="LIVE TELEMETRY" fig="FIG.04" bodyClass="grid grid-cols-2 divide-x divide-y divide-line">
+      <Panel label="LIVE TELEMETRY" fig="FIG.04" className="shrink-0" bodyClass="grid grid-cols-2 divide-x divide-y divide-line">
         <Cell
           label="CACHE HIT RATE"
           value={fmtPct(m.hitRate, 1)}
@@ -100,7 +100,7 @@ export function TelemetryPanel({ m, history }: { m: Metrics; history: HistoryFra
         <Cell label="EVICTIONS" value={fmtCompact(m.evictionRate)} unit="/s" tone={m.evictionRate > 0 ? "miss" : "dim"} />
       </Panel>
 
-      <Panel label="CACHE LEVERAGE" fig="FIG.05" bodyClass="p-0">
+      <Panel label="CACHE LEVERAGE" fig="FIG.05" className="shrink-0" bodyClass="p-0">
         <Headline
           big={fmtCompact(m.dbRequestsPrevented, 1)}
           unit="req/s ABSORBED"
